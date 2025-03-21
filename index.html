@@ -226,7 +226,7 @@
                 <h2>Select a Topic</h2>
                 <select id="topic-selector">
                     <option value="" disabled selected>Choose a topic</option>
-                    <option value="algorithms">Algorithms & Data Structures</option>
+                    <option value="algorithms">Algorithms</option>
                     <option value="programming">Programming Languages</option>
                     <option value="databases">Databases</option>
                     <option value="networking">Computer Networking</option>
@@ -236,6 +236,7 @@
                     <option value="ai">Artificial Intelligence</option>
                     <option value="web_development">Web Development</option>
                     <option value="cybersecurity">Cybersecurity</option>
+                    <option value="data_structures">Data Structures</option>
                 </select>
             </div>
             <div class="actions">
@@ -294,17 +295,669 @@
         // Question Banks for different topics
         // These will be filled manually later
         const questionBanks = {
-            algorithms: [],
-            programming: [],
-            databases: [],
-            networking: [],
-            operating_systems: [],
-            software_engineering: [],
-            computer_architecture: [],
-            ai: [],
-            web_development: [],
-            cybersecurity: []
-        };
+    algorithms: [
+        {
+            question: "What is the time complexity of binary search?",
+            options: [
+                "O(1)",
+                "O(log n)",
+                "O(n)",
+                "O(n²)"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which sorting algorithm has the best average-case time complexity?",
+            options: [
+                "Bubble Sort",
+                "Insertion Sort",
+                "Quick Sort",
+                "Selection Sort"
+            ],
+            answer: 2
+        },
+        {
+            question: "What is the primary characteristic of a greedy algorithm?",
+            options: [
+                "It always uses recursion",
+                "It makes locally optimal choices at each step",
+                "It always guarantees the optimal solution",
+                "It uses a bottom-up approach"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which algorithm is used to find the shortest path in a weighted graph?",
+            options: [
+                "Depth-First Search",
+                "Breadth-First Search",
+                "Dijkstra's Algorithm",
+                "Bubble Sort"
+            ],
+            answer: 2
+        }
+    ],
+    programming: [
+        {
+            question: "Which programming language is primarily used for web development?",
+            options: [
+                "C++",
+                "JavaScript",
+                "Python",
+                "Swift"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which of the following is not an object-oriented programming language?",
+            options: [
+                "Java",
+                "C#",
+                "C",
+                "Python"
+            ],
+            answer: 2
+        },
+        {
+            question: "What does API stand for?",
+            options: [
+                "Application Programming Interface",
+                "Automated Programming Integration",
+                "Application Process Integration",
+                "Advanced Programming Interface"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which operator is used for string concatenation in JavaScript?",
+            options: [
+                "+",
+                "&",
+                ".",
+                "|"
+            ],
+            answer: 0
+        },
+        {
+    question: "Which programming language is primarily used for web development?",
+    options: [
+        "C++",
+        "JavaScript",
+        "Python",
+        "Swift"
+    ],
+    answer: 1
+},
+{
+    question: "What is the purpose of a function in programming?",
+    options: [
+        "To store multiple values",
+        "To execute a specific block of code when called",
+        "To iterate over a sequence",
+        "To display output on the screen"
+    ],
+    answer: 1
+},
+{
+    question: "Which data structure follows the Last In, First Out (LIFO) principle?",
+    options: [
+        "Queue",
+        "Stack",
+        "Array",
+        "Linked List"
+    ],
+    answer: 1
+},
+{
+    question: "What is the output of `print(2 ** 3)` in Python?",
+    options: [
+        "6",
+        "8",
+        "9",
+        "5"
+    ],
+    answer: 1
+},
+{
+    question: "Which of the following is used to style web pages?",
+    options: [
+        "HTML",
+        "CSS",
+        "Java",
+        "Python"
+    ],
+    answer: 1
+},
+{
+    question: "Which loop structure is used when the number of iterations is known beforehand?",
+    options: [
+        "while loop",
+        "for loop",
+        "do-while loop",
+        "recursion"
+    ],
+    answer: 1
+},
+{
+    question: "Which keyword is used to define a function in JavaScript?",
+    options: [
+        "func",
+        "def",
+        "function",
+        "define"
+    ],
+    answer: 2
+},
+{
+    question: "Which of the following is an example of a relational database?",
+    options: [
+        "MongoDB",
+        "Redis",
+        "MySQL",
+        "Firebase"
+    ],
+    answer: 2
+},
+{
+    question: "Which of the following is a strongly typed programming language?",
+    options: [
+        "Python",
+        "Java",
+        "JavaScript",
+        "PHP"
+    ],
+    answer: 1
+},
+{
+    question: "What does the `return` statement do in a function?",
+    options: [
+        "Ends the function execution and returns a value",
+        "Continues execution of the function",
+        "Stops the loop execution",
+        "Declares a new variable"
+    ],
+    answer: 0
+},
+{
+    question: "Which of the following is NOT a valid variable name in Python?",
+    options: [
+        "my_variable",
+        "2variable",
+        "_varName",
+        "var_123"
+    ],
+    answer: 1
+},
+{
+    question: "Which data type is used to store a sequence of characters in most programming languages?",
+    options: [
+        "Integer",
+        "Boolean",
+        "String",
+        "Float"
+    ],
+    answer: 2
+},
+{
+    question: "Which of these is an example of an interpreted language?",
+    options: [
+        "C++",
+        "Java",
+        "Python",
+        "Rust"
+    ],
+    answer: 2
+},
+{
+    question: "Which operator is used for logical AND in most programming languages?",
+    options: [
+        "&&",
+        "||",
+        "!",
+        "&"
+    ],
+    answer: 0
+},
+{
+    question: "What will be the output of `console.log(typeof 42);` in JavaScript?",
+    options: [
+        "number",
+        "integer",
+        "float",
+        "string"
+    ],
+    answer: 0
+},
+{
+    question: "Which of the following sorting algorithms has the best average case time complexity?",
+    options: [
+        "Bubble Sort",
+        "Merge Sort",
+        "Insertion Sort",
+        "Selection Sort"
+    ],
+    answer: 1
+},
+{
+    question: "Which of the following is a compiled programming language?",
+    options: [
+        "Python",
+        "JavaScript",
+        "C",
+        "Ruby"
+    ],
+    answer: 2
+},
+{
+    question: "What is an API?",
+    options: [
+        "Application Processing Interface",
+        "Automated Programming Integration",
+        "Application Programming Interface",
+        "Advanced Program Implementation"
+    ],
+    answer: 2
+},
+{
+    question: "Which keyword is used to declare constants in JavaScript?",
+    options: [
+        "var",
+        "let",
+        "const",
+        "static"
+    ],
+    answer: 2
+},
+{
+    question: "What is the correct way to declare a list in Python?",
+    options: [
+        "list = {1, 2, 3}",
+        "list = [1, 2, 3]",
+        "list = (1, 2, 3)",
+        "list = <1, 2, 3>"
+    ],
+    answer: 1
+}
+    ],
+    databases: [
+        {
+            question: "Which of the following is not a SQL database?",
+            options: [
+                "MySQL",
+                "PostgreSQL",
+                "MongoDB",
+                "Oracle"
+            ],
+            answer: 2
+        },
+        {
+            question: "What does ACID stand for in database systems?",
+            options: [
+                "Atomicity, Consistency, Isolation, Durability",
+                "Association, Completion, Isolation, Distribution",
+                "Atomicity, Completion, Integration, Durability",
+                "Authentication, Consistency, Isolation, Distribution"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which SQL statement is used to retrieve data from a database?",
+            options: [
+                "GET",
+                "OPEN",
+                "SELECT",
+                "EXTRACT"
+            ],
+            answer: 2
+        },
+        {
+            question: "What is a foreign key?",
+            options: [
+                "A key from another country",
+                "A field that uniquely identifies each record in a table",
+                "A field that connects to the primary key of another table",
+                "An encryption key for secure data"
+            ],
+            answer: 2
+        }
+    ],
+    networking: [
+        {
+            question: "Which protocol is used for secure web browsing?",
+            options: [
+                "HTTP",
+                "FTP",
+                "HTTPS",
+                "SMTP"
+            ],
+            answer: 2
+        },
+        {
+            question: "What does IP stand for in networking?",
+            options: [
+                "Internet Protocol",
+                "Internet Provider",
+                "Information Processing",
+                "Internal Package"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which layer of the OSI model handles routing?",
+            options: [
+                "Physical Layer",
+                "Data Link Layer",
+                "Network Layer",
+                "Transport Layer"
+            ],
+            answer: 2
+        },
+        {
+            question: "What is a subnet mask used for?",
+            options: [
+                "To encrypt data",
+                "To identify the network and host portions of an IP address",
+                "To block unwanted traffic",
+                "To connect to wireless networks"
+            ],
+            answer: 1
+        }
+    ],
+    operating_systems: [
+        {
+            question: "What is a deadlock in operating systems?",
+            options: [
+                "A system crash",
+                "A situation where two or more processes cannot proceed because each is waiting for resources held by others",
+                "An error in the file system",
+                "A security breach"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which of the following is not a process state?",
+            options: [
+                "Ready",
+                "Running",
+                "Waiting",
+                "Compiling"
+            ],
+            answer: 3
+        },
+        {
+            question: "What is the purpose of paging in memory management?",
+            options: [
+                "To increase CPU speed",
+                "To organize files on a disk",
+                "To implement virtual memory",
+                "To encrypt sensitive data"
+            ],
+            answer: 2
+        },
+        {
+            question: "Which scheduling algorithm gives the highest priority to the process with the shortest execution time?",
+            options: [
+                "First-Come, First-Served (FCFS)",
+                "Round Robin",
+                "Shortest Job First (SJF)",
+                "Priority Scheduling"
+            ],
+            answer: 2
+        }
+    ],
+    software_engineering: [
+        {
+            question: "Which software development methodology emphasizes iterative development and customer collaboration?",
+            options: [
+                "Waterfall Model",
+                "Agile Development",
+                "Spiral Model",
+                "V-Model"
+            ],
+            answer: 1
+        },
+        {
+            question: "What does CI/CD stand for in software development?",
+            options: [
+                "Continuous Integration/Continuous Deployment",
+                "Computer Interface/Computer Design",
+                "Customer Integration/Customer Development",
+                "Code Implementation/Code Design"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which of the following is not a testing type?",
+            options: [
+                "Unit Testing",
+                "Integration Testing",
+                "Regression Testing",
+                "Waterfall Testing"
+            ],
+            answer: 3
+        },
+        {
+            question: "What is version control used for?",
+            options: [
+                "To track and manage changes to code",
+                "To control access to databases",
+                "To verify user credentials",
+                "To optimize code execution"
+            ],
+            answer: 0
+        }
+    ],
+    computer_architecture: [
+        {
+            question: "What is the function of the ALU in a CPU?",
+            options: [
+                "Memory management",
+                "Input/output operations",
+                "Performing arithmetic and logical operations",
+                "Disk storage"
+            ],
+            answer: 2
+        },
+        {
+            question: "Which component is known as the 'brain' of the computer?",
+            options: [
+                "Hard Drive",
+                "RAM",
+                "CPU",
+                "Motherboard"
+            ],
+            answer: 2
+        },
+        {
+            question: "What does RAID stand for?",
+            options: [
+                "Random Access Internal Drive",
+                "Redundant Array of Independent Disks",
+                "Rapid Access Information Database",
+                "Remote Access Input Device"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which memory is faster?",
+            options: [
+                "Hard Disk",
+                "RAM",
+                "Cache",
+                "Optical Drive"
+            ],
+            answer: 2
+        }
+    ],
+    ai: [
+        {
+            question: "Which of the following is a supervised learning algorithm?",
+            options: [
+                "K-means clustering",
+                "Linear regression",
+                "Principal Component Analysis",
+                "Apriori algorithm"
+            ],
+            answer: 1
+        },
+        {
+            question: "What is deep learning?",
+            options: [
+                "Learning that occurs during REM sleep",
+                "A subset of machine learning using neural networks with multiple layers",
+                "Learning from extensive textbooks",
+                "A type of reinforcement learning"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which AI concept refers to a system's ability to adapt to new data without being explicitly reprogrammed?",
+            options: [
+                "Expert Systems",
+                "Machine Learning",
+                "Neural Networks",
+                "Natural Language Processing"
+            ],
+            answer: 1
+        },
+        {
+            question: "What is the Turing Test used to evaluate?",
+            options: [
+                "Computer processing speed",
+                "Network security",
+                "Machine's ability to exhibit intelligent behavior indistinguishable from a human",
+                "Database efficiency"
+            ],
+            answer: 2
+        }
+    ],
+    web_development: [
+        {
+            question: "Which technology is primarily used for styling web pages?",
+            options: [
+                "HTML",
+                "JavaScript",
+                "CSS",
+                "PHP"
+            ],
+            answer: 2
+        },
+        {
+            question: "What does DOM stand for in web development?",
+            options: [
+                "Document Object Model",
+                "Data Object Management",
+                "Digital Ordinance Model",
+                "Distributed Object Method"
+            ],
+            answer: 0
+        },
+        {
+            question: "Which of the following is a JavaScript framework?",
+            options: [
+                "Django",
+                "Ruby on Rails",
+                "Flask",
+                "Angular"
+            ],
+            answer: 3
+        },
+        {
+            question: "What is the purpose of a REST API?",
+            options: [
+                "To style web pages",
+                "To create responsive designs",
+                "To enable communication between different systems over the internet",
+                "To store data locally in browsers"
+            ],
+            answer: 2
+        }
+    ],
+    data_structures: [
+        {
+            question: "Which data structure operates on a Last-In-First-Out (LIFO) principle?",
+            options: [
+                "Queue",
+                "Stack",
+                "Linked List",
+                "Tree"
+            ],
+            answer: 1
+        },
+        {
+            question: "What is the average time complexity for searching in a balanced binary search tree?",
+            options: [
+                "O(1)",
+                "O(log n)",
+                "O(n)",
+                "O(n²)"
+            ],
+            answer: 1
+        },
+        {
+            question: "Which of the following is not a linear data structure?",
+            options: [
+                "Array",
+                "Linked List",
+                "Stack",
+                "Tree"
+            ],
+            answer: 3
+        },
+        {
+            question: "What data structure would be most appropriate for implementing a FIFO system?",
+            options: [
+                "Stack",
+                "Binary Search Tree",
+                "Queue",
+                "Heap"
+            ],
+            answer: 2
+        }
+    ],
+    cybersecurity: [
+        {
+            question: "What is a firewall used for?",
+            options: [
+                "To speed up internet connection",
+                "To monitor and filter incoming and outgoing network traffic",
+                "To encrypt data",
+                "To store backup data"
+            ],
+            answer: 1
+        },
+        {
+            question: "What type of attack tries to flood a server with excessive traffic?",
+            options: [
+                "Phishing",
+                "Man-in-the-middle",
+                "SQL Injection",
+                "DDoS (Distributed Denial of Service)"
+            ],
+            answer: 3
+        },
+        {
+            question: "What is two-factor authentication?",
+            options: [
+                "Using two passwords",
+                "Using two different browsers",
+                "A security method requiring two different types of verification",
+                "Logging in from two different devices"
+            ],
+            answer: 2
+        },
+        {
+            question: "Which of the following is not a common encryption algorithm?",
+            options: [
+                "AES",
+                "RSA",
+                "SHA-256",
+                "FTP"
+            ],
+            answer: 3
+        }
+    ]
+};
         
         // Quiz state
         let currentQuiz = [];
